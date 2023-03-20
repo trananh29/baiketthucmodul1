@@ -8,13 +8,20 @@
 
 
 
-  let str1= ''
-  let str2=''
+  let str1= 'vi'
+  let str2='vi do la em'
   function checkArray(stra,strb) {
+      let check=true
     for (let i=0; i<stra.length-1;i++) {
-
+        for (let j=0;j<strb.length-1;j++) {
+            if (stra[i]===strb[j+i]) {
+                    check=true
+            } else check=false
+        }
     }
+    return check;
   }
+ console.log(checkArray(str1,str2))
 </script>
 </body>
 </html>

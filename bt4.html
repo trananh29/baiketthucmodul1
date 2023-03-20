@@ -4,7 +4,54 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+<button type="button" onclick="inputrect()">Make new rectang</button>
+<canvas id="mycanvas" width="720" height="720" style="border: 1px" ></canvas>
 <body>
+<script>
+    class Rectang {
+        constructor(top,left,width,height) {
+            this.width=width;
+            this.height=height;
+            this.top=top;
+            this.left=left;
+            this.colour= '#000000';
+        }
+        getWidth(){
+            return this.width
+        }
+        getHeight(){
+            return this.height
+        }
+        getTop(){
+            return this.top
+        }
+        getLeft(){
+            return this.left
+        }
+    }
+    let rect1=new Rectang(10,10,200,100,)
 
+    function CreateRectang(rect) {
+        var c = document.getElementById('mycanvas');
+        var ctx = c.getContext("2d");
+        let x= rect.getTop()
+        let y= rect.getLeft()
+        let z= rect.getWidth()
+        let k=rect.getHeight()
+        ctx.beginPath();
+        ctx.strokeStyle = "#000000";
+        ctx.rect(x, y, z, k);
+        ctx.stroke();
+    }
+    CreateRectang(rect1)
+    function inputrect() {
+        let a=+prompt('Nhap toa do X','')
+        let b=+prompt('Nhap toa do Y','')
+        let c=+prompt('Nhap chieu cao','')
+        let d=+prompt('Nhap chieu rong','')
+        let newrect= new Rectang(a,b,c,d)
+        CreateRectang(newrect);
+    }
+</script>
 </body>
 </html>
