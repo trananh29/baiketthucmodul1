@@ -12,11 +12,15 @@
   let str2='vi do la em'
   function checkArray(stra,strb) {
       let check=true
-    for (let i=0; i<stra.length-1;i++) {
-        for (let j=0;j<strb.length-1;j++) {
-            if (stra[i]===strb[j+i]) {
-                    check=true
-            } else check=false
+    for (let i=0; i<strb.length-1;i++) {
+       if (stra[0]===strb[i]) {
+           for (let j=0;j<stra.length-1;j++) {
+               if (stra[i]!==strb[j+i]) {
+                   check=false
+               }
+
+
+            }
         }
     }
     return check;
